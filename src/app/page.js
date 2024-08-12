@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import { useState } from "react";
 import axios from "axios";
 import crypto from "crypto";
@@ -8,19 +8,26 @@ export default function Home() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false);
-  const privateKey = process.env.MARVEL_PRIVATE_KEY;
-  const publicKey = process.env.MARVEL_PUBLIC_KEY;
+  const privateKey = "7fb80ffb3b6d8547c7d7d9869ef449eada64dbed";
+ 
+  const publicKey = "388a4de4d729dc268e39bf492ec7547e";
+  
+  
+  
 
-  const fetchMarvelData = async (characterName) => {
+  const fetchMarvelData = async () => {
     try {
       const ts = new Date().getTime();
+      console.log(`Type of ts: ${typeof ts}`);
       const toHash = ts + privateKey + publicKey;
+      console.log(`Type of toHash: ${typeof toHash}`);
+      console.log(`toHash value: ${toHash}`);
       const hash = crypto
         .createHash("md5")
         .update(toHash, "utf-8")
         .digest("hex");
-      const url = `http://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
-
+        const url = `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+        
       axios
         .get(url)
         .then((response) => {
@@ -40,6 +47,7 @@ export default function Home() {
     const response = await fetchMarvelData(characterName);
     setAnswer(response);
     speak(response);
+    console.log(response);
   };
 
   const speak = (text) => {
@@ -69,6 +77,7 @@ export default function Home() {
         >
           Submit
         </button>
+        <p>{answer}</p>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left"></div>
