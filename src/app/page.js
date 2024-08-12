@@ -1,12 +1,48 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import Button from "./components/button";
+import axios from 'axios';
+
 
 export default function Home() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [loading, setLoading] = useState(false);
+  const key = process.env.MARVEL_PRIVATE_KEY
+
+     const fetchMarvelData = async (characterName) => {
+        try {
+          const response = await axios.get(`https://gateway.marvel.com/v1/public/characters`, {
+            params: {
+              name: characterName,
+              apikey: key, // Replace with your actual Marvel API key
+            },
+          });
+    
+          const character = response.data.data.results[0];
+          if (character) {
+            return character.description || 'No description available for this character.';
+          } else {
+            return 'Character not found.';
+          }
+        } catch (error) {
+          console.error('Error fetching data from Marvel API:', error);
+          return 'Failed to retrieve data. Please try again later.';
+        }
+      };
+    
+      const handleQuestion = async () => {
+        const characterName = 'Spider-Man'; // You can customize this based on the question
+        const response = await fetchMarvelData(characterName);
+        setAnswer(response);
+        speak(response);
+      };
+    
+      const speak = (text) => {
+        const speech = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(speech);
+      };
+   
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -28,7 +64,7 @@ export default function Home() {
         >
         
         </input>
-        <Button />
+        <button type='submit' onClick={handleQuestion} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
