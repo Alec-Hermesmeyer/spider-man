@@ -33,3 +33,17 @@ main{
     text-wrap: balance;
   }
 }
+@media (max-width: 640px) {
+  .text-balance {
+    text-wrap: normal;
+  }
+  main{
+    width: 100dvw;
+    height: auto;
+    background-color: #000;
+    background-image: url('../../public/background.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
