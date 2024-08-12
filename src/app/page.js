@@ -1,6 +1,5 @@
 import Image from "next/image";
-// public marvel key ="388a4de4d729dc268e39bf492ec7547e"
-//private marvel key = "7fb80ffb3b6d8547c7d7d9869ef449eada64dbed"
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
