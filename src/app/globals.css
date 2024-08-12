@@ -18,11 +18,14 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-    background-color: #000;
-    background-image: url('../../public/background.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+   
+}
+main{
+  background-color: #000;
+  background-image: url('../../public/background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @layer utilities {
