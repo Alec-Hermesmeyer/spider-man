@@ -21,6 +21,10 @@ export default function CharacterGrid() {
               ? "col-span-1 sm:col-span-2 md:col-span-3 scale-105 z-10"
               : "hover:scale-105"
           } ${selectedCharacter === character ? "order-first" : ""}`}
+          style={{
+            margin: selectedCharacter === character ? "20px 0" : "0",
+            transform: selectedCharacter === character ? "scale(1.05)" : "scale(1)",
+          }}
           onClick={() => handleClick(character)}
         >
           <div className="relative group">
