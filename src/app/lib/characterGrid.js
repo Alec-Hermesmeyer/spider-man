@@ -1,21 +1,28 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { spiderManCharacters } from "../lib/data";
 import Image from "next/image";
 
 export default function CharacterGrid() {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const characterRef = useRef(null);
 
   const handleClick = (character) => {
     setSelectedCharacter(character === selectedCharacter ? null : character);
   };
 
+useEffect(() => {
+    if (selectedCharacter && characterRef.current) {
+      characterRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedCharacter]);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2 sm:p-4 md:p-6">
-    {spiderManCharacters
-      .map((character, index) => (
+      {spiderManCharacters.map((character, index) => (
         <div
           key={index}
+          ref={selectedCharacter === character ? characterRef : null}
           className={`relative p-2 sm:p-4 transition-all duration-300 transform ${
             selectedCharacter === character
               ? "col-span-1 sm:col-span-2 md:col-span-3 scale-105 z-10"
@@ -76,8 +83,7 @@ export default function CharacterGrid() {
             </div>
           )}
         </div>
-      ))
-      .sort((a, b) => (a.props.className.includes("order-first") ? -1 : 0))}
-  </div>
+      ))}
+    </div>
   );
 }
