@@ -178,8 +178,8 @@ export function getCharacterInfo(characterName) {
   </div>
 
   {/* Bottom Section: Split between Abilities and Backstory */}
-  <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-10 w-full">
-  <div className="flex flex-col justify-center items-center text-center mb-6 md:mb-2">
+  <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-10 w-[90%]">
+  <div className="flex flex-col justify-center items-center text-center mb-6 md:mb-2 sm:mb-1">
     <h4 className="text-xl text-blue-400 font-semibold mb-3">Abilities:</h4>
     <ul className="list-disc list-inside text-gray-300 space-y-2 pl-5">
       {character.abilities.map((ability, index) => (
@@ -187,7 +187,7 @@ export function getCharacterInfo(characterName) {
       ))}
     </ul>
   </div>
-  <div className="flex flex-col justify-center items-center">
+  <div className="flex flex-col justify-center items-center mb-4 md:mb-2 sm:mb-1">
     <h4 className="text-xl text-blue-400 font-semibold mb-3">Backstory:</h4>
     <p className="text-gray-300 leading-relaxed">{character.backstory}</p>
   </div>
