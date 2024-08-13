@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { getCharacterInfo } from "./lib/data";
+import { motion } from 'framer-motion';
+import CharacterGrid from "./lib/characterGrid";
 
 export default function Home() {
   const [question, setQuestion] = useState("");
@@ -20,25 +22,10 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 overflow-hidden">
+      
       <section className="p-6 bg-gray-800 bg-opacity-60  rounded-xl shadow-lg mb-8">
-        <h2 className="text-3xl font-bold text-white mb-4 text-center">
-          Spider-Man 2
-        </h2>
-        <p className="text-gray-300 text-lg mb-4 leading-relaxed">
-          Welcome to the Spider-Man 2 Q&amp;A app! This app allows you to dive
-          deep into the characters of the Spider-Man 2 video game. Whether
-          you&apos;re curious about Peter Parker, Miles Morales, or any of their
-          formidable foes, just type a question and get instant answers about
-          their abilities, backstory, and more.
-        </p>
-        <p className="text-gray-300 leading-relaxed">
-          Simply enter the name or alias of your favorite character in the input
-          below, select whether you want to search by their real name or
-          superhero identity, and click &quot;Submit&quot; to reveal the
-          information. Enjoy exploring the Spider-Verse!
-        </p>
+        <CharacterGrid />
       </section>
-
       <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[380px] before:-translate-x-1/2 before:rounded-full "></div>
       <div className="flex flex-col items-center justify-center text-center mb-32">
         <input
