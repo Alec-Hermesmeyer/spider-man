@@ -26,10 +26,10 @@ export default function Home() {
       <section className="mb-8 p-4 bg-blue-50 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-blue-600 mb-2 text-center">About the Spider-Man 2 Q&A App</h2>
         <p className="text-gray-700 mb-4">
-          Welcome to the Spider-Man 2 Q&A app! This app allows you to dive deep into the characters of the Spider-Man 2 video game. Whether you're curious about Peter Parker, Miles Morales, or any of their formidable foes, just type a question and get instant answers about their abilities, backstory, and more.
+          Welcome to the Spider-Man 2 Q&amp;A app! This app allows you to dive deep into the characters of the Spider-Man 2 video game. Whether you&apos;re curious about Peter Parker, Miles Morales, or any of their formidable foes, just type a question and get instant answers about their abilities, backstory, and more.
         </p>
         <p className="text-gray-700">
-          Simply enter the name or alias of your favorite character in the input below, select whether you want to search by their real name or superhero identity, and click "Ask" to reveal the information. Enjoy exploring the Spider-Verse!
+          Simply enter the name or alias of your favorite character in the input below, select whether you want to search by their real name or superhero identity, and click &quot;Submit&quot; to reveal the information. Enjoy exploring the Spider-Verse!
         </p>
       </section>
 

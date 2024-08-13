@@ -142,8 +142,8 @@ export function getCharacterInfo(characterName) {
         <h3 class="text-xl text-white mb-4">Alias: <span class="font-semibold">{character.alias}</span></h3>
         <h4 class="text-lg text-white font-semibold mb-2">Abilities:</h4>
         <ul class="list-disc list-inside text-white mb-4">
-          {character.abilities.map((ability) => (
-            <li>{ability}</li>
+          {character.abilities.map((ability, index) => (
+            <li key={index}>{ability}</li>
           ))}
         </ul>
         <h4 class="text-lg text-white font-semibold mb-1">Backstory:</h4>
