@@ -169,7 +169,7 @@ export function getCharacterInfo(characterName) {
       <h3 className="text-lg text-gray-300">
         Alias: <span className="font-semibold text-white">{character.alias}</span>
       </h3>
-    </div>
+    </div>  
   </div>
 
   <div className="pl-0 md:pl-12">
