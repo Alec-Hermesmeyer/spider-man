@@ -112,17 +112,26 @@ export function getCharacterInfo(characterName) {
   ];
   const character = spiderManCharacters.find(
     (char) => char.name.toLowerCase() === characterName.toLowerCase() || char.alias.toLowerCase() === characterName.toLowerCase()
+    
   );
   
   if (character) {
-    return `
-      Name: ${character.name}
-      Alias: ${character.alias}
-      Abilities: ${character.abilities.join(", ")}
-      Backstory: ${character.backstory}
-    `;
+    return (
+      <div class="p-4 bg-transparent rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-white mb-2">{character.name}</h2>
+        <h3 class="text-xl text-white mb-4">Alias: <span class="font-semibold">{character.alias}</span></h3>
+        <h4 class="text-lg text-white font-semibold mb-2">Abilities:</h4>
+        <ul class="list-disc list-inside text-white mb-4">
+          {character.abilities.map((ability) => (
+            <li>{ability}</li>
+          ))}
+        </ul>
+        <h4 class="text-lg text-white font-semibold mb-1">Backstory:</h4>
+        <p class="text-white">{character.backstory}</p>
+      </div>
+    );
   } else {
-    return `Character ${characterName} not found.`;
+    return `<div class="p-4 bg-red-100 text-red-700 rounded-lg shadow-md">Character ${characterName} not found.</div>`;
   }
 }
   
