@@ -99,6 +99,19 @@ export function getCharacterInfo(characterName) {
       backstory: "Dr. Curt Connors, after experimenting to regrow his lost arm, transforms into the Lizard, a monstrous being with superhuman strength, durability, and regenerative abilities. His transformation is tragic, as it leads him to lose control and become a threat to those he once sought to protect."
     },
     {
+      name: "Felicia Hardy",
+      alias: "Black Cat",
+      abilities: [
+        "Expert Thief",
+        "Enhanced Agility",
+        "Martial Arts",
+        "Reflexes",
+        "Use of Gadgets and Traps",
+        "Probability Manipulation (Bad Luck Aura)"
+      ],
+      backstory: "Felicia Hardy, the daughter of renowned cat burglar Walter Hardy, was raised in a life of wealth and privilege. However, after experiencing a traumatic event during her college years, Felicia dedicated herself to becoming as strong and skilled as possible. She trained in various forms of martial arts, gymnastics, and acrobatics, and eventually followed in her father's footsteps to become the notorious thief known as Black Cat.\n\nBlack Cat initially crossed paths with Spider-Man as an adversary, but over time, their relationship became more complex, shifting between romance, rivalry, and uneasy alliance. Felicia's moral compass is often ambiguous; she is driven by her own code of honor rather than societal norms, which sometimes puts her at odds with both heroes and villains.\n\nDespite her criminal career, Black Cat has a complicated relationship with Spider-Man. She deeply cares for him and has, at times, fought alongside him against common enemies. However, her desire for independence and her unwillingness to conform to the role of a traditional hero often leads her down a more self-serving path."
+    },
+    {
       name: "Nox Anthony Hermesmeyer",
       alias: "Cheesy Weiner",
       abilities: [
@@ -110,13 +123,20 @@ export function getCharacterInfo(characterName) {
       backstory: "Born in Panama City Beach, Nox now lives in Texas with his dad, Mimi and Popo. He is the smartest, bravest, kindest, and most loving boy there ever was. He is my bestfriend in the world and I love Him more than anything."
     }
   ];
-  const character = spiderManCharacters.find(
-    (char) => char.name.toLowerCase() === characterName.toLowerCase() || char.alias.toLowerCase() === characterName.toLowerCase()
-    
+  const character = spiderManCharacters.find((char) =>
+    char.name.toLowerCase() === characterName.toLowerCase() ||
+    char.alias.toLowerCase() === characterName.toLowerCase()
   );
-  
+
   if (character) {
-    return (
+    const textContent = `
+      Name: ${character.name}
+      Alias: ${character.alias}
+      Abilities: ${character.abilities.join(", ")}
+      Backstory: ${character.backstory}
+    `;
+
+    const renderedComponent = (
       <div class="p-4 bg-transparent rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-white mb-2">{character.name}</h2>
         <h3 class="text-xl text-white mb-4">Alias: <span class="font-semibold">{character.alias}</span></h3>
@@ -130,8 +150,17 @@ export function getCharacterInfo(characterName) {
         <p class="text-white">{character.backstory}</p>
       </div>
     );
+
+    return { textContent, renderedComponent };
   } else {
-    return `<div class="p-4 bg-red-100 text-red-700 rounded-lg shadow-md">Character ${characterName} not found.</div>`;
+    const textContent = `Character ${characterName} not found.`;
+    const renderedComponent = (
+      <div class="w-96 p-4 bg-red-100 text-red-700 rounded-lg shadow-md">
+        Character {characterName} not found.
+      </div>
+    );
+
+    return { textContent, renderedComponent };
   }
 }
   

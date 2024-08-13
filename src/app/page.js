@@ -9,16 +9,11 @@ export default function Home() {
 
   
   const handleQuestion = () => {
-    const response = getCharacterInfo(question);
-    setAnswer(response);
-    speak(response);
+    const { textContent, renderedComponent } = getCharacterInfo(question);
+    setAnswer(renderedComponent);
+    speak(textContent);
   };
-  const handleSearchBy = () => {
-    const response = getCharacterInfo(searchBy);
-    setAnswer(response);
-    speak(response);
-  }
-
+  
   const speak = (text) => {
     const speech = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(speech);
@@ -27,7 +22,7 @@ export default function Home() {
   
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 overflow-hidddenn">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 overflow-hidden">
       <section className="mb-8 p-4 bg-blue-50 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-blue-600 mb-2 text-center">About the Spider-Man 2 Q&A App</h2>
         <p className="text-gray-700 mb-4">
@@ -55,7 +50,7 @@ export default function Home() {
         >
           Submit
         </button>
-        <p className="z-10  pt-10 max-w-5xl w-96 items-center justify-between font-mono text-sm lg:flex">{answer}</p>
+        <p className="z-10  pt-10 max-w-5xl w-auto items-center justify-between font-mono text-sm lg:flex">{answer}</p>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left"></div>
