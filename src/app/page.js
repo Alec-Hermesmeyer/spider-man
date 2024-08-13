@@ -7,29 +7,35 @@ export default function Home() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
 
-  
   const handleQuestion = () => {
     const { textContent, renderedComponent } = getCharacterInfo(question);
     setAnswer(renderedComponent);
     speak(textContent);
   };
-  
+
   const speak = (text) => {
     const speech = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(speech);
   };
 
-  
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 overflow-hidden">
-      <section className="mb-8 p-4 bg-blue-50 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-blue-600 mb-2 text-center">Spider-Man 2</h2>
-        <p className="text-gray-700 mb-4">
-          Welcome to the Spider-Man 2 Q&amp;A app! This app allows you to dive deep into the characters of the Spider-Man 2 video game. Whether you&apos;re curious about Peter Parker, Miles Morales, or any of their formidable foes, just type a question and get instant answers about their abilities, backstory, and more.
+      <section className="p-6 bg-gray-800 rounded-xl shadow-lg mb-8">
+        <h2 className="text-3xl font-bold text-white mb-4 text-center">
+          Spider-Man 2
+        </h2>
+        <p className="text-gray-300 mb-4 leading-relaxed">
+          Welcome to the Spider-Man 2 Q&amp;A app! This app allows you to dive
+          deep into the characters of the Spider-Man 2 video game. Whether
+          you&apos;re curious about Peter Parker, Miles Morales, or any of their
+          formidable foes, just type a question and get instant answers about
+          their abilities, backstory, and more.
         </p>
-        <p className="text-gray-700">
-          Simply enter the name or alias of your favorite character in the input below, select whether you want to search by their real name or superhero identity, and click &quot;Submit&quot; to reveal the information. Enjoy exploring the Spider-Verse!
+        <p className="text-gray-300 leading-relaxed">
+          Simply enter the name or alias of your favorite character in the input
+          below, select whether you want to search by their real name or
+          superhero identity, and click &quot;Submit&quot; to reveal the
+          information. Enjoy exploring the Spider-Verse!
         </p>
       </section>
 
@@ -42,7 +48,7 @@ export default function Home() {
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="Ask a question about Spider-Man..."
         ></input>
-        
+
         <button
           type="submit"
           onClick={handleQuestion}
@@ -50,7 +56,9 @@ export default function Home() {
         >
           Submit
         </button>
-        <p className="z-10  pt-10 max-w-5xl w-auto items-center justify-between font-mono text-sm lg:flex">{answer}</p>
+        <p className="z-10  pt-10 max-w-5xl w-auto items-center justify-between font-mono text-sm lg:flex">
+          {answer}
+        </p>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left"></div>
