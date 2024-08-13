@@ -1,28 +1,41 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { spiderManCharacters } from "../lib/data";
 import Image from "next/image";
 
 export default function CharacterGrid() {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const characterRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if the screen size is mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Mobile if screen width <= 768px
+    };
+
+    // Initial check
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleClick = (character) => {
     setSelectedCharacter(character === selectedCharacter ? null : character);
   };
 
-useEffect(() => {
-    if (selectedCharacter && characterRef.current) {
-      characterRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [selectedCharacter]);
+  const sortedCharacters = isMobile
+    ? spiderManCharacters // Don't sort on mobile
+    : spiderManCharacters.sort((a, b) => (a.name < b.name ? -1 : 1));
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2 sm:p-4 md:p-6">
-      {spiderManCharacters.map((character, index) => (
+      {sortedCharacters.map((character, index) => (
         <div
           key={index}
-          ref={selectedCharacter === character ? characterRef : null}
           className={`relative p-2 sm:p-4 transition-all duration-300 transform ${
             selectedCharacter === character
               ? "col-span-1 sm:col-span-2 md:col-span-3 scale-105 z-10"
