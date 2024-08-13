@@ -108,7 +108,7 @@ export const spiderManCharacters = [
   {
     name: "Felicia Hardy",
     alias: "Black Cat",
-    imageUrl: '/BlackCat.jpg',
+    imageUrl: '/BlackCat2.jpg',
     abilities: [
       "Expert Thief",
       "Enhanced Agility",
