@@ -4,13 +4,13 @@ import { spiderManCharacters } from "../lib/data";
 import Image from "next/image";
 
 export default function CharacterGrid() {
-    const [selectedCharacter, setSelectedCharacter] = useState(null);
-  
-    const handleClick = (character) => {
-      setSelectedCharacter(character === selectedCharacter ? null : character);
-    };
-  
-    return (
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+
+  const handleClick = (character) => {
+    setSelectedCharacter(character === selectedCharacter ? null : character);
+  };
+
+  return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6">
       {spiderManCharacters
         .map((character, index) => (
