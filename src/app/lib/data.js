@@ -179,7 +179,7 @@ export function getCharacterInfo(characterName) {
 
   {/* Bottom Section: Split between Abilities and Backstory */}
   <div className="grid grid-cols-1 md:grid-cols-2  pl-10 pr-10 w-92">
-    <div className='pl-10'>
+    <div className='pl-10 md:pl-8'>
       <h4 className="text-xl text-blue-400 font-semibold mb-3">Abilities:</h4>
       <ul className="list-disc list-inside text-gray-300 space-y-2 pl-0">
         {character.abilities.map((ability, index) => (
@@ -187,7 +187,7 @@ export function getCharacterInfo(characterName) {
         ))}
       </ul>
     </div>
-    <div lassName='pr-10'>
+    <div lassName='pr-10 md:mt-10'>
       <h4 className="text-xl text-blue-400 font-semibold mb-3">Backstory:</h4>
       <p className="text-gray-300 leading-relaxed">{character.backstory}</p>
     </div>
