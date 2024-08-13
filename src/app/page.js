@@ -3,57 +3,25 @@
 import { useState } from "react";
 import axios from "axios";
 import crypto from "crypto";
+import { getCharacterInfo } from "./lib/data";
 
 export default function Home() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-  const [loading, setLoading] = useState(false);
-  const privateKey = "7fb80ffb3b6d8547c7d7d9869ef449eada64dbed";
- 
-  const publicKey = "388a4de4d729dc268e39bf492ec7547e";
-  
-  
-  
 
-  const fetchMarvelData = async () => {
-    try {
-      const ts = new Date().getTime();
-      console.log(`Type of ts: ${typeof ts}`);
-      const toHash = ts + privateKey + publicKey;
-      console.log(`Type of toHash: ${typeof toHash}`);
-      console.log(`toHash value: ${toHash}`);
-      const hash = crypto
-        .createHash("md5")
-        .update(toHash, "utf-8")
-        .digest("hex");
-        const url = `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
-        
-      axios
-        .get(url)
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data from Marvel API:", error);
-        });
-    } catch (error) {
-      console.error("Error fetching data from Marvel API:", error);
-      return "Failed to retrieve data. Please try again later.";
-    }
-  };
-
-  const handleQuestion = async () => {
-    const characterName = "Spider-Man"; // You can customize this based on the question
-    const response = await fetchMarvelData(characterName);
+  
+  const handleQuestion = () => {
+    const response = getCharacterInfo(question);
     setAnswer(response);
     speak(response);
-    console.log(response);
   };
 
   const speak = (text) => {
     const speech = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(speech);
   };
+
+  
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -62,9 +30,9 @@ export default function Home() {
       </div>
 
       <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full "></div>
-      <div className="flex flex-col items-center justify-center text-center">
+      <div className="flex flex-col items-center justify-center text-center mb-32">
         <input
-          className="mb-5"
+          className="mb-5 w-96 h-10 px-3 py-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline cursor-pointer focus:outline-none"
           type="text"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
@@ -73,11 +41,11 @@ export default function Home() {
         <button
           type="submit"
           onClick={handleQuestion}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-96"
         >
           Submit
         </button>
-        <p>{answer}</p>
+        <p className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">{answer}</p>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left"></div>
