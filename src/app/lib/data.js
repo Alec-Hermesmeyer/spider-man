@@ -137,58 +137,37 @@ export function getCharacterInfo(characterName) {
     `;
 
     const renderedComponent = (
-      <div className="p-6 bg-gray-800 bg-opacity-60  rounded-xl shadow-lg">
-  <div className="flex space-x-8">
-    {/* Left Column: Character Name, Alias, and Abilities */}
-    <div className="w-1/2">
-      <div className="flex items-center space-x-4 mb-6">
-        <div className="bg-blue-600 rounded-full p-2">
-          <svg
-            className="w-8 h-8 text-white"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-            <path d="M12 14l6.16-3.422A12.048 12.048 0 0120 12c0 5.523-4.477 10-10 10S0 17.523 0 12c0-.346.02-.688.057-1.027L12 14z"></path>
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 14l-6.16-3.422A12.048 12.048 0 014 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-.346-.02-.688-.057-1.027L12 14z"
-            ></path>
-          </svg>
+      <div className="p-6 bg-gray-800 bg-opacity-60 rounded-xl shadow-lg">
+      <div className="flex flex-col md:flex-row md:space-x-8">
+        {/* Left Column: Character Name, Alias, and Abilities */}
+        <div className="md:w-1/2">
+          <div className="flex flex-col md:flex-row items-start md:items-center md:space-x-4 mb-6">
+            <div>
+              <h2 className="text-3xl pl-0 md:pl-12 font-bold text-white">{character.name}</h2>
+              <h3 className="text-lg text-gray-300">
+                Alias: <span className="font-semibold text-white">{character.alias}</span>
+              </h3>
+            </div>
+          </div>
+    
+          <div className="pl-0 md:pl-12">
+            <h4 className="text-xl text-blue-400 font-semibold mb-2">Abilities:</h4>
+            <ul className="list-disc text-lg pl-6 md:pl-12 text-left list-inside text-gray-300 space-y-1">
+              {character.abilities.map((ability, index) => (
+                <li key={index}>{ability}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div>
-          <h2 className="text-3xl pl-12 font-bold text-white">{character.name}</h2>
-          <h3 className="text-lg text-gray-300">
-            Alias: <span className="font-semibold text-white">{character.alias}</span>
-          </h3>
+    
+        {/* Right Column: Backstory */}
+        <div className="md:w-1/2 pb-6 md:pb-32 pt-4 md:pt-20 pr-0 md:pr-12">
+          <h4 className="text-xl text-blue-400 font-semibold mb-2">Backstory:</h4>
+          <p className="text-gray-300 text-lg leading-relaxed">{character.backstory}</p>
         </div>
       </div>
-
-      <div>
-        <h4 className="text-xl text-blue-400 font-semibold mb-2">Abilities:</h4>
-        <ul className="list-disc text-lg pl-40 text-left list-inside text-gray-300 space-y-1">
-          {character.abilities.map((ability, index) => (
-            <li key={index}>{ability}</li>
-          ))}
-        </ul>
-      </div>
     </div>
-
-    {/* Right Column: Backstory */}
-    <div className="w-1/2 pb-32 pt-20 mt-1 pr-12">
-      <h4 className="text-xl  text-blue-400 font-semibold mb-2">Backstory:</h4>
-      <p className="text-gray-300 text-lg leading-relaxed">{character.backstory}</p>
-    </div>
-  </div>
-</div>
-
+    
     );
 
     return { textContent, renderedComponent };
