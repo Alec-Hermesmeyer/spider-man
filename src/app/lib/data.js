@@ -90,7 +90,7 @@ export const spiderManCharacters = [
   {
     name: "Martin Li",
     alias: "Mister Negative",
-    imageUrl: "/MartinLi.jpeg",
+    imageUrl: "/martinli3.jpg",
     abilities: [
       "Energy manipulation",
       "Corruption touch",
