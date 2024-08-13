@@ -44,7 +44,8 @@ export default function CharacterGrid() {
           } ${!isMobile && selectedCharacter === character ? "order-first" : ""}`}
           style={{
             margin: selectedCharacter === character ? "40px 0" : "0",
-            transform: selectedCharacter === character ? "scale(1.05)" : "scale(1)",
+            padding: selectedCharacter === character ? "20px 0" : "0.5rem",
+            transform: selectedCharacter === character ? "scale(.75)" : "scale(1)",
           }}
           onClick={() => handleClick(character)}
         >
