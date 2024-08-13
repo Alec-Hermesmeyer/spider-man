@@ -45,7 +45,7 @@ export default function CharacterGrid() {
           style={{
             margin: selectedCharacter === character ? "40px 0" : "0",
             padding: selectedCharacter === character ? "20px 0" : "0.5rem",
-            transform: selectedCharacter === character ? "scale(.75)" : "scale(1)",
+            transform: selectedCharacter === character ? "scale(1.05)" : "scale(1)",
           }}
           onClick={() => handleClick(character)}
         >
@@ -75,7 +75,9 @@ export default function CharacterGrid() {
                   <Image
                     src={character.imageUrl}
                     alt={character.name}
-                    layout="fill"
+                    width={500}
+                    height={500}
+                    priority
                     objectFit="cover"
                     className="rounded-lg"
                   />
