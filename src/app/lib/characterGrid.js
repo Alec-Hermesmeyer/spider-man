@@ -43,7 +43,7 @@ export default function CharacterGrid() {
               : "hover:scale-105"
           } ${!isMobile && selectedCharacter === character ? "order-first" : ""}`}
           style={{
-            margin: selectedCharacter === character ? "20px 0" : "0",
+            margin: selectedCharacter === character ? "40px 0" : "0",
             transform: selectedCharacter === character ? "scale(1.05)" : "scale(1)",
           }}
           onClick={() => handleClick(character)}
