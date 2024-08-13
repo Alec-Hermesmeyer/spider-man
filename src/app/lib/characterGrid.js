@@ -32,7 +32,7 @@ export default function CharacterGrid() {
   }, [selectedCharacter, isMobile]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2 sm:p-4 md:p-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2 sm:p-4 md:p-6 sm:m-12">
       {spiderManCharacters.map((character, index) => (
         <div
           key={index}
