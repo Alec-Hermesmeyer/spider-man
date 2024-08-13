@@ -20,11 +20,11 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 overflow-hidden">
-      <section className="p-6 bg-gray-800 rounded-xl shadow-lg mb-8">
+      <section className="p-6 bg-gray-800 bg-opacity-60  rounded-xl shadow-lg mb-8">
         <h2 className="text-3xl font-bold text-white mb-4 text-center">
           Spider-Man 2
         </h2>
-        <p className="text-gray-300 mb-4 leading-relaxed">
+        <p className="text-gray-300 text-lg mb-4 leading-relaxed">
           Welcome to the Spider-Man 2 Q&amp;A app! This app allows you to dive
           deep into the characters of the Spider-Man 2 video game. Whether
           you&apos;re curious about Peter Parker, Miles Morales, or any of their

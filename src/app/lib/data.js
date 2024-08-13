@@ -137,7 +137,7 @@ export function getCharacterInfo(characterName) {
     `;
 
     const renderedComponent = (
-      <div className="p-6 bg-gray-800 rounded-xl shadow-lg">
+      <div className="p-6 bg-gray-800 bg-opacity-60  rounded-xl shadow-lg">
   <div className="flex space-x-8">
     {/* Left Column: Character Name, Alias, and Abilities */}
     <div className="w-1/2">
@@ -164,7 +164,7 @@ export function getCharacterInfo(characterName) {
           </svg>
         </div>
         <div>
-          <h2 className="text-3xl font-bold text-white">{character.name}</h2>
+          <h2 className="text-3xl pl-12 font-bold text-white">{character.name}</h2>
           <h3 className="text-lg text-gray-300">
             Alias: <span className="font-semibold text-white">{character.alias}</span>
           </h3>
@@ -173,7 +173,7 @@ export function getCharacterInfo(characterName) {
 
       <div>
         <h4 className="text-xl text-blue-400 font-semibold mb-2">Abilities:</h4>
-        <ul className="list-disc pl-40 text-left list-inside text-gray-300 space-y-1">
+        <ul className="list-disc text-lg pl-40 text-left list-inside text-gray-300 space-y-1">
           {character.abilities.map((ability, index) => (
             <li key={index}>{ability}</li>
           ))}
@@ -182,9 +182,9 @@ export function getCharacterInfo(characterName) {
     </div>
 
     {/* Right Column: Backstory */}
-    <div className="w-1/2 pb-32 pt-20 pr-12">
+    <div className="w-1/2 pb-32 pt-20 mt-1 pr-12">
       <h4 className="text-xl  text-blue-400 font-semibold mb-2">Backstory:</h4>
-      <p className="text-gray-300 leading-relaxed">{character.backstory}</p>
+      <p className="text-gray-300 text-lg leading-relaxed">{character.backstory}</p>
     </div>
   </div>
 </div>
