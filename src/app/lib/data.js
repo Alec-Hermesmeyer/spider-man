@@ -70,7 +70,7 @@ export const spiderManCharacters = [
   },
   {
     name: "Norman Osborn",
-    alias: "Green Goblin",
+    alias: "Norman Osborn",
     imageUrl: '/Norman-Osborn.jpg',
     abilities: [
       "Genius intellect",
