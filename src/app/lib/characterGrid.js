@@ -32,7 +32,7 @@ export default function CharacterGrid() {
   }, [selectedCharacter, isMobile]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 p-2 sm:p-4 md:p-6 sm:m-12 max-w-7xl w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 p-2 sm:p-4 md:p-6 sm:m-12">
       {spiderManCharacters.map((character, index) => (
         <div
           key={index}
@@ -43,13 +43,13 @@ export default function CharacterGrid() {
               : "hover:scale-105"
           } ${!isMobile && selectedCharacter === character ? "order-first" : ""}`}
           style={{
-            margin: selectedCharacter === character ? "20px 0" : "0",
+            margin: selectedCharacter === character ? "40px 0" : "0",
             height: selectedCharacter === character
           ? isMobile
             ? "500px"
             : "auto"
           : "100%",
-            padding: selectedCharacter === character ? "20px 0" : "0.5rem",
+            padding: selectedCharacter === character ? "80px 0" : "0.5rem",
             transform: selectedCharacter === character ? "scale(1.05)" : "scale(1)",
           }}
           onClick={() => handleClick(character)}
