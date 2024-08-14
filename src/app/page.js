@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start p-4 md:p-12 overflow-visible">
-    <section className="w-full max-w-7xl p-4 md:p-6 bg-gray-800 bg-opacity-60 rounded-xl shadow-lg mb-8">
+    <section className="flex items-center justify-center w-full max-w-7xl p-4 md:p-6 bg-gray-800 bg-opacity-60 rounded-xl shadow-lg mb-8">
       <CharacterGrid />
     </section>
   
