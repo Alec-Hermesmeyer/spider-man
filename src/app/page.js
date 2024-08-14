@@ -5,7 +5,10 @@ import { getCharacterInfo } from "./lib/data";
 import { motion } from 'framer-motion';
 import CharacterGrid from "./lib/characterGrid";
 
-export default function Home() {
+
+
+
+export default function Home(getPsnAccess) {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
 
@@ -27,7 +30,7 @@ export default function Home() {
     </section>
   
     <div className="w-full max-w-4xl relative flex place-items-center">
-      {/* Additional content can go here */}
+    
     </div>
   
     <div className="flex flex-col items-center justify-center text-center max-w-7xl w-full  mb-16 md:mb-32">
@@ -53,9 +56,6 @@ export default function Home() {
       </div>
     </div>
   
-    <div className="mb-16 md:mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-      {/* Additional content can go here */}
-    </div>
   </main>
     );
 }
