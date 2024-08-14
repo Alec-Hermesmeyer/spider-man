@@ -44,6 +44,11 @@ export default function CharacterGrid() {
           } ${!isMobile && selectedCharacter === character ? "order-first" : ""}`}
           style={{
             margin: selectedCharacter === character ? "40px 0" : "0",
+            height: selectedCharacter === character
+          ? isMobile
+            ? "500px"
+            : "auto"
+          : "100%",
             padding: selectedCharacter === character ? "20px 0" : "0.5rem",
             transform: selectedCharacter === character ? "scale(1.05)" : "scale(1)",
           }}
