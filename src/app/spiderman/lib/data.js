@@ -5,11 +5,11 @@ export const spiderManCharacters = [
     imageUrl: "/Spider-Man.jpg",
 
     abilities: [
-      "Wall-crawling",
-      "Super strength",
-      "Spider-sense",
-      "Web-shooting",
-      "Enhanced agility",
+      "Wall-crawling | ",
+      "Super strength | ",
+      "Spider-sense | ",
+      "Web-shooting | ",
+      "Enhanced agility | ",
       "Symbiote powers",
     ],
     backstory:
@@ -20,11 +20,11 @@ export const spiderManCharacters = [
     alias: "Spin",
     imageUrl: "/Miles.jpg",
     abilities: [
-      "Invisibility",
-      "Bio-electric venom strike",
-      "Wall-crawling",
-      "Spider-sense",
-      "Web-shooting",
+      "Invisibility | ",
+      "Bio-electric venom strike | ",
+      "Wall-crawling | ",
+      "Spider-sense | ",
+      "Web-shooting | ",
       "Enhanced agility",
     ],
     backstory:
@@ -35,11 +35,11 @@ export const spiderManCharacters = [
     alias: "Venom",
     imageUrl: "/Venom.jpg",
     abilities: [
-      "Super strength",
-      "Shape-shifting",
-      "Web generation",
-      "Symbiote healing",
-      "Camouflage",
+      "Super strength | ",
+      "Shape-shifting | ",
+      "Web generation | ",
+      "Symbiote healing | ",
+      "Camouflage | ",
       "Enhanced agility",
     ],
     backstory:
@@ -50,10 +50,10 @@ export const spiderManCharacters = [
     alias: "Kraven the Hunter",
     imageUrl: "/Kraven.webp",
     abilities: [
-      "Expert tracker",
-      "Enhanced strength",
-      "Master hunter",
-      "Hand-to-hand combat",
+      "Expert tracker | ",
+      "Enhanced strength | ",
+      "Master hunter | ",
+      "Hand-to-hand combat | ",
       "Use of poisons and traps",
     ],
     backstory:
@@ -65,9 +65,9 @@ export const spiderManCharacters = [
     imageUrl: "/Sandman.jpg",
     abilities: [
       "Sand manipulation",
-      "Shape-shifting",
-      "Super strength",
-      "Size alteration",
+      "Shape-shifting | ",
+      "Super strength | ",
+      "Size alteration | ",
       "Density control",
     ],
     backstory:
@@ -79,9 +79,9 @@ export const spiderManCharacters = [
     imageUrl: "/Norman-Osborn.jpg",
     abilities: [
       "Genius intellect",
-      "Goblin serum-enhanced strength",
-      "Advanced technology and weapons",
-      "Combat skills",
+      "Goblin serum-enhanced strength | ",
+      "Advanced technology and weapons | ",
+      "Combat skills | ",
       "Glider flight",
     ],
     backstory:
@@ -92,9 +92,9 @@ export const spiderManCharacters = [
     alias: "Mister Negative",
     imageUrl: "/martinli3.jpg",
     abilities: [
-      "Energy manipulation",
-      "Corruption touch",
-      "Dual personalities",
+      "Energy manipulation | ",
+      "Corruption touch | ",
+      "Dual personalities | ",
       "Healing powers",
     ],
     backstory:
@@ -105,9 +105,9 @@ export const spiderManCharacters = [
     alias: "Lizard Man",
     imageUrl: "/DrC.jpg",
     abilities: [
-      "Super strength",
-      "Enhanced durability",
-      "Regenerative healing",
+      "Super strength | ",
+      "Enhanced durability | ",
+      "Regenerative healing | ",
       "Lizard physiology",
     ],
     backstory:
@@ -118,11 +118,11 @@ export const spiderManCharacters = [
     alias: "Black Cat",
     imageUrl: "/BlackCat2.jpg",
     abilities: [
-      "Expert Thief",
-      "Enhanced Agility",
-      "Martial Arts",
-      "Reflexes",
-      "Use of Gadgets and Traps",
+      "Expert Thief | ",
+      "Enhanced Agility | ",
+      "Martial Arts | ",
+      "Reflexes | ",
+      "Use of Gadgets and Traps | ",
       "Probability Manipulation (Bad Luck Aura)",
     ],
     backstory:
